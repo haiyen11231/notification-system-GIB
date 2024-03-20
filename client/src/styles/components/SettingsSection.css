@@ -1,0 +1,20 @@
+.settings-section {
+    padding: 16px;
+    background-color: #2b303e;
+    display: flex;
+    width: 912px;
+    border-radius: 16px;
+    margin-bottom: 4px;
+}
+
+.settings-section:last-child {
+    margin-bottom: 0;
+}
+
+.settings-section__title {
+    color: #ffffffe5;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    width: 320px;
+}

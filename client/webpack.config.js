@@ -10,7 +10,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "public", "index.html"),
-            favicon: "./public/favicon.ico"
+            favicon: "./public/favicon.ico",
         }),
     ],
     devServer: {
@@ -27,12 +27,12 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-              test: /\.css$/i,
-              use: ["style-loader", "css-loader"],
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
             },
         ],
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
-    }
+    },
 };
