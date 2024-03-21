@@ -15,26 +15,26 @@ const Settings = () => {
         localStorage.getItem("notificationCount") || "3"
     );
     const [notificationPosition, setNotificationPosition] = useState(
-        localStorage.getItem("notificationPosition") || "position 1"
+        localStorage.getItem("notificationPosition") || "position-1"
     );
     const [notificationDisappearTime, setNotificationDisappearTime] = useState(
-        localStorage.getItem("notificationDisappearTime") || "7000"
+        localStorage.getItem("notificationDisappearTime") || "7"
     );
+    const [error, setError] = useState("");
 
     const handleClick = () => {
-        localStorage.setItem("notificationCount", notificationCount);
-        localStorage.setItem("notificationPosition", notificationPosition);
-        localStorage.setItem(
-            "notificationDisappearTime",
-            notificationDisappearTime
-        );
+        if (notificationCount === "" || notificationDisappearTime === "") {
+            setError("Please fill in all required fields");
+        } else {
+            localStorage.setItem("notificationCount", notificationCount);
+            localStorage.setItem("notificationPosition", notificationPosition);
+            localStorage.setItem(
+                "notificationDisappearTime",
+                notificationDisappearTime
+            );
+            setError("");
+        }
     };
-
-    // const handleNotificationDisappearTime = (e: any) => {
-    //     const inputValue = e.target.value;
-    //     // Concatenate "000" to the input value and set it
-    //     setNotificationDisappearTime(inputValue + "000");
-    // };
 
     return (
         <div className="container">
@@ -83,7 +83,6 @@ const Settings = () => {
                         onChange={(e) =>
                             setNotificationDisappearTime(e.target.value)
                         }
-                        // onChange={handleNotificationDisappearTime} // Updated event handler
                     ></input>
                     <span>sec</span>
                 </div>
@@ -91,6 +90,7 @@ const Settings = () => {
             <button className="btn-submit" onClick={handleClick}>
                 Submit
             </button>
+            {error && <p className="error">{error}</p>}
         </div>
     );
 };

@@ -7,8 +7,9 @@ const Main = () => {
     const [messages, setMessages] = useState<any[]>([]);
     const [displayedMessages, setDisplayedMessages] = useState<any[]>([]);
     const notificationDisappearTime = parseInt(
-        localStorage.getItem("notificationDisappearTime") || "7000"
+        localStorage.getItem("notificationDisappearTime") + "000" || "7000"
     );
+
     const notificationCount = parseInt(
         localStorage.getItem("notificationCount") || "3"
     );
