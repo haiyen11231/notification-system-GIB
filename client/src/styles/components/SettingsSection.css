@@ -7,10 +7,6 @@
     margin-bottom: 4px;
 }
 
-.settings-section:last-child {
-    margin-bottom: 0;
-}
-
 .settings-section__title {
     color: #ffffffe5;
     font-size: 13px;

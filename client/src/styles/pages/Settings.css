@@ -9,7 +9,7 @@
 }
 
 .number-input::placeholder {
-    color: #ffffffe5;
+    color: #B4B4B8;
 }
 
 .notification-position__list {
@@ -60,6 +60,10 @@
     line-height: 16px;
     font-weight: 400;
     font-size: 13px;
+    margin-top: 10px;
+    background-color: #2b303e;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -68,3 +72,4 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+

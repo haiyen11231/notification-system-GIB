@@ -1,16 +1,29 @@
 import { useEffect, useState } from "react";
 import "../styles/components/Message.css";
 
-const Message = ({ content, handleClick, timeout }: any) => {
+interface MessageProps {
+    content: string;
+    timeout: number;
+    setMessages: React.Dispatch<React.SetStateAction<any[]>>;
+}
+
+const Message: React.FC<MessageProps> = ({ content, timeout, setMessages }) => {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);
+            setMessages((prevMessages: any) =>
+                prevMessages.filter((message: any) => message.msg !== content)
+            );
         }, timeout);
 
         return () => clearTimeout(timer);
-    }, [timeout]);
+    }, [content, timeout, setMessages]);
+
+    const handleClick = () => {
+        setIsVisible(false);
+    };
 
     return isVisible ? (
         <div className="message">

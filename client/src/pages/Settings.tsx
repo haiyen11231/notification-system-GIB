@@ -12,13 +12,13 @@ const positions = [
 
 const Settings = () => {
     const [notificationCount, setNotificationCount] = useState(
-        localStorage.getItem("notificationCount") || "0"
+        localStorage.getItem("notificationCount") || "3"
     );
     const [notificationPosition, setNotificationPosition] = useState(
         localStorage.getItem("notificationPosition") || "position 1"
     );
     const [notificationDisappearTime, setNotificationDisappearTime] = useState(
-        localStorage.getItem("notificationDisappearTime") || "3000"
+        localStorage.getItem("notificationDisappearTime") || "7000"
     );
 
     const handleClick = () => {
@@ -29,6 +29,12 @@ const Settings = () => {
             notificationDisappearTime
         );
     };
+
+    // const handleNotificationDisappearTime = (e: any) => {
+    //     const inputValue = e.target.value;
+    //     // Concatenate "000" to the input value and set it
+    //     setNotificationDisappearTime(inputValue + "000");
+    // };
 
     return (
         <div className="container">
@@ -58,6 +64,9 @@ const Settings = () => {
                                     onChange={(e) => {
                                         setNotificationPosition(e.target.value);
                                     }}
+                                    checked={
+                                        notificationPosition === position.value
+                                    }
                                 />
                             </div>
                         );
@@ -74,16 +83,7 @@ const Settings = () => {
                         onChange={(e) =>
                             setNotificationDisappearTime(e.target.value)
                         }
-                        // onChange={(e) => {
-                        //     const enteredValue = parseInt(e.target.value, 10); // Parse to integer
-                        //     if (!isNaN(enteredValue)) {
-                        //         // Check if valid number
-                        //         const newValue = enteredValue * 1000;
-                        //         setNotificationDisappearTime(
-                        //             newValue.toString()
-                        //         ); // Convert to string
-                        //     }
-                        // }}
+                        // onChange={handleNotificationDisappearTime} // Updated event handler
                     ></input>
                     <span>sec</span>
                 </div>

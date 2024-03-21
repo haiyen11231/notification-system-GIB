@@ -3,7 +3,6 @@ import "../styles/components/Header.css";
 
 const Header = () => {
     const { pathname } = useLocation();
-    console.log("params: ", pathname);
 
     return (
         <div className="header">
