@@ -1,0 +1,23 @@
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-height: 100vh;
+}
+.position-1 {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.position-2 {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.position-3 {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.position-4 {
+    justify-content: flex-end;
+    align-items: flex-end;
+}

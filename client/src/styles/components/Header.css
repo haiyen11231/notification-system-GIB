@@ -4,6 +4,7 @@
     display: flex;
     margin-bottom: 32px;
 }
+
 .header__title {
     display: flex;
     font-size: 22px;
@@ -11,9 +12,11 @@
     font-weight: 500;
     margin-right: 40px;
 }
+
 .header__title a {
     color: #ffffffe5;
 }
+
 .nav__list {
     display: flex;
     height: 100%;
@@ -31,9 +34,11 @@
     color: #ffffff99;
     height: 100%;
 }
+
 .nav__item:first-child {
     margin-right: 24px;
 }
+
 .clicked {
     color: #8dcafe !important;
     border-bottom: 2px solid #8dcafe;

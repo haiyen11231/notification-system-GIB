@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
 import "../styles/components/Message.css";
 
-const Message = ({ content, handleClick }: any) => {
-    return (
+const Message = ({ content, handleClick, timeout }: any) => {
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(false);
+        }, timeout);
+
+        return () => clearTimeout(timer);
+    }, [timeout]);
+
+    return isVisible ? (
         <div className="message">
             <p className="message__content">{content}</p>
             <button className="message__btn" onClick={handleClick}>
@@ -22,7 +33,7 @@ const Message = ({ content, handleClick }: any) => {
                 </svg>
             </button>
         </div>
-    );
+    ) : null;
 };
 
 export default Message;

@@ -12,7 +12,7 @@
     color: #ffffffe5;
 }
 
-.notification-position {
+.notification-position__list {
     display: flex;
 }
 
@@ -53,6 +53,13 @@
     font-weight: 400;
     font-size: 13px;
     align-items: flex-end;
+}
+
+.btn-submit {
+    color: #ffffffe5;
+    line-height: 16px;
+    font-weight: 400;
+    font-size: 13px;
 }
 
 /* Chrome, Safari, Edge, Opera */
